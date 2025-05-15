@@ -95,9 +95,6 @@ def generate_svg_metadata(svg_content):
 
 def run(pdf_file_path, svg_output_path):
     #"../../../Docs/ID_Phase/2D_spec.pdf"
-    # pdf_file_path = '../../../Docs/ID_Phase/2D_spec.pdf'  # 您的 PDF 檔案名稱
-    # svg_output_path = '2D_spec.svg' # 輸出的 SVG 檔案名稱
-
     # 檢查 PDF 檔案是否存在
     if not os.path.exists(pdf_file_path):
         print(f"錯誤：找不到 PDF 檔案 '{pdf_file_path}'。請確保檔案存在於正確的路徑。")
@@ -131,3 +128,9 @@ def run(pdf_file_path, svg_output_path):
             print("無法生成 SVG 元數據。")
     else:
         print(f"由於無法將 PDF 轉換為 SVG，因此無法生成元數據。")
+
+
+if __name__ == "__main__":
+    _pdf_file_path = '../../../Docs/ID_Phase/2D_spec.pdf'  # 您的 PDF 檔案名稱
+    _svg_output_path = '2D_spec.svg' # 輸出的 SVG 檔案名稱
+    run(_pdf_file_path, _svg_output_path);
