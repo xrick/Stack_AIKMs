@@ -1,0 +1,650 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        -3160,
+        -140
+      ],
+      "id": "432ecc1b-692d-4d3c-a76a-080da05ef99e",
+      "name": "Ollama Chat Model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "dFAifqM16ieiJs1l",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "{{@json.payload.item[1]}}",
+                    "rightValue": "1",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "9cb3d632-62a7-4fe0-9bb3-0c7c9d50460e"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "根據ID及堆疊評估整機結構工藝可行性"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4dea99e0-19bb-4169-a7e9-bcebb3ab88b4",
+                    "leftValue": "{{@json.payload.item[2]}}",
+                    "rightValue": "2",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "客戶標準"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b04c2b17-44ee-4f77-a4f8-e28463eed6b3",
+                    "leftValue": "{{@json.payload.item[3]}}",
+                    "rightValue": "3",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "供應商評估工藝可行性報告"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "5fe2de26-1a3b-4ffe-b4c0-fe72693a35a4",
+                    "leftValue": "{{@json.payload.item[4]}}",
+                    "rightValue": "4",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "TC/LPM-機電件規格書"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "43a28838-1af0-4b89-81e7-9242b39405ec",
+                    "leftValue": "{{@json.payload.item[5]}}",
+                    "rightValue": "5",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "天線可行性報告"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4a6386f5-9dac-487c-bdf8-56545222591d",
+                    "leftValue": "{{@json.payload.item[6]}}",
+                    "rightValue": "6",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ESD可行性報告"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ea5ef7ec-0f96-4997-8a6d-d4eb2d4da495",
+                    "leftValue": "{{@json.payload.item[7]}}",
+                    "rightValue": "7",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "音頻可行性報告"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d615f11a-7068-4ab9-96a7-b0136a8f0aec",
+                    "leftValue": "{{@json.payload.item[8]}}",
+                    "rightValue": "8",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "相關確認報告"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6ca02f35-3981-452a-af12-110a6a611eef",
+                    "leftValue": "{{@json.payload.item[9]}}",
+                    "rightValue": "9",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "MD結構自檢評審-checklist"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -2740,
+        -520
+      ],
+      "id": "5c30fe96-2c20-4b5e-878b-6bdeace87165",
+      "name": "任務分配"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "start",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -3400,
+        -400
+      ],
+      "id": "8e38cd9a-0ee7-465b-8f5b-b1696efa4e29",
+      "name": "WebAPI",
+      "webhookId": "3d3b2a4a-7efa-4f8e-8a62-7af02ce1b458"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Hi, will you start ID-Phase Check?",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        -3180,
+        -400
+      ],
+      "id": "bf0544b1-c75e-46c4-a985-5da9d828ab25",
+      "name": "智能代理",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the JSON of the item\n$input.item.json.myNewField = 1;\n//perform check($input);\nreturn $input.item;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2380,
+        -1020
+      ],
+      "id": "4d48d57f-aefc-4280-bd3a-e076fdf85736",
+      "name": "審核依據ID和堆疊評估整機結構工藝可行性"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the JSON of the item\n$input.item.json.myNewField = 1;\n\nreturn $input.item;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2380,
+        -860
+      ],
+      "id": "acfe1fbd-6e86-429b-876e-b36486c85091",
+      "name": "審核客戶標準"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the JSON of the item\n$input.item.json.myNewField = 1;\n\nreturn $input.item;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2380,
+        -720
+      ],
+      "id": "4e9bad1c-8d37-4733-8b52-0a1ac27a5347",
+      "name": "審核供应商评估工艺可实现性报告"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the JSON of the item\n$input.item.json.myNewField = 1;\n\nreturn $input.item;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2380,
+        -560
+      ],
+      "id": "5a8d55b2-8e6e-4437-87f1-92b8171e2b3e",
+      "name": "審核TP-LCM图纸及机电件规格书"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the JSON of the item\n$input.item.json.myNewField = 1;\n\nreturn $input.item;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2380,
+        -400
+      ],
+      "id": "0f6b663a-dc39-4864-8225-ed820a55ec2b",
+      "name": "審核天线可行性报告"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2380,
+        -260
+      ],
+      "id": "917ad1e3-39a9-489e-a184-4b09457fef4e",
+      "name": "審核ESD可行性评估报告"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the JSON of the item\n$input.item.json.myNewField = 1;\n\nreturn $input.item;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2380,
+        -120
+      ],
+      "id": "3be73d8f-90f2-4dd7-8411-c19fd458a71f",
+      "name": "審核音频可行性报告"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the JSON of the item\n$input.item.json.myNewField = 1;\n\nreturn $input.item;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2380,
+        20
+      ],
+      "id": "12b00b55-9b23-4ee8-ae65-c85a965f57a1",
+      "name": "審核相关确认报告"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the JSON of the item\n$input.item.json.myNewField = 1;\n\nreturn $input.item;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1500,
+        -420
+      ],
+      "id": "0c1d5f5d-fd70-449c-ab55-7eef2e7f124b",
+      "name": "執行綜合評估程序"
+    },
+    {
+      "parameters": {
+        "numberInputs": 8
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        -1880,
+        -520
+      ],
+      "id": "1cf54011-fc15-4529-9f77-a40c3a8fffa8",
+      "name": "綜合評估資料"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Ollama Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "智能代理",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WebAPI": {
+      "main": [
+        [
+          {
+            "node": "智能代理",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "智能代理": {
+      "main": [
+        [
+          {
+            "node": "任務分配",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "任務分配": {
+      "main": [
+        [
+          {
+            "node": "審核依據ID和堆疊評估整機結構工藝可行性",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "審核客戶標準",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "審核供应商评估工艺可实现性报告",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "審核TP-LCM图纸及机电件规格书",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "審核天线可行性报告",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "審核ESD可行性评估报告",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "審核音频可行性报告",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "審核相关确认报告",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "審核依據ID和堆疊評估整機結構工藝可行性": {
+      "main": [
+        [
+          {
+            "node": "綜合評估資料",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "審核音频可行性报告": {
+      "main": [
+        [
+          {
+            "node": "綜合評估資料",
+            "type": "main",
+            "index": 6
+          }
+        ]
+      ]
+    },
+    "審核客戶標準": {
+      "main": [
+        [
+          {
+            "node": "綜合評估資料",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "審核供应商评估工艺可实现性报告": {
+      "main": [
+        [
+          {
+            "node": "綜合評估資料",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "審核TP-LCM图纸及机电件规格书": {
+      "main": [
+        [
+          {
+            "node": "綜合評估資料",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "審核天线可行性报告": {
+      "main": [
+        [
+          {
+            "node": "綜合評估資料",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "審核ESD可行性评估报告": {
+      "main": [
+        [
+          {
+            "node": "綜合評估資料",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "審核相关确认报告": {
+      "main": [
+        [
+          {
+            "node": "綜合評估資料",
+            "type": "main",
+            "index": 7
+          }
+        ]
+      ]
+    },
+    "執行綜合評估程序": {
+      "main": [
+        []
+      ]
+    },
+    "綜合評估資料": {
+      "main": [
+        [
+          {
+            "node": "執行綜合評估程序",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "776276e8-cc9a-4bca-99db-a5009f7e847a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ee31490eb0bc3d1066baf3f9c6f2a036b409b5f5b3567585dbba2eab1d661ec5"
+  },
+  "id": "y0X851KHYNTtOlhh",
+  "tags": []
+}
